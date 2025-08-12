@@ -1,55 +1,53 @@
+/* Reset default spacing and add horizontal padding */
 body {
   margin: 0;
-  padding: 0 1rem;
+  padding: 0 16px; /* roughly 1rem */
 }
 
+/* Center the main heading */
 h1 {
   text-align: center;
 }
 
+/* Use CSS grid for main content with some space between items */
 main {
   display: grid;
-  gap: 1rem;
+  gap: 16px; /* space between grid items */
 }
 
-@media (width >= 600px) {
+/* For wider screens, arrange main content in two columns */
+@media (min-width: 600px) {
   main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* two equal columns */
   }
 }
 
+/* Style the list of parties as a grid with some spacing */
 .parties {
-  display: grid;
-  gap: 1ch;
+  list-style: none; /* remove bullet points */
   padding-left: 0;
-  list-style-type: none;
+  display: grid;
+  gap: 1ch; /* horizontal spacing based on character width */
 }
 
+/* Style each party link as a block with border and padding */
 .parties a {
   display: block;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
   padding: 1ch;
+  border: 1px solid #5ce033;
+  border-radius: 4px;
   text-decoration: none;
-  color: black;
+  color: #bd4c4c;
 }
 
+/* Hover effect: subtle background change and italic text */
 .parties a:hover {
-  background: #eee;
+  background-color: #6bd3ec;
   font-style: italic;
 }
 
+/* Highlight selected party with bold and italic */
 .parties li.selected {
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
-}
-
-form {
-  display: grid;
-  gap: 1ch;
-  padding: 0 1rem;
-}
-
-label {
-  display: grid;
 }
